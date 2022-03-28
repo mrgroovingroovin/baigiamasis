@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filmai.LoginController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <GridPane prefHeight="400.0" prefWidth="600.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Pane prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@style.css">
+                    <children>
+                        <Button layoutX="136.0" layoutY="158.0" mnemonicParsing="false" onAction="#onLoginButtonClick1" prefHeight="44.0" prefWidth="112.0" text="Prisijungti" />
+                        <Button layoutX="313.0" layoutY="158.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="44.0" prefWidth="112.0" text="Registruotis" />
+                  <TextField layoutX="136.0" layoutY="94.0" prefHeight="25.0" prefWidth="289.0" text="SVEIKI ATVYKĘ Į FILMŲ INFORMACINĘ APLIKACIJĄ!" />
+                    </children>
+                </Pane>
+            </children>
+        </GridPane>
+    </children>
+</VBox>

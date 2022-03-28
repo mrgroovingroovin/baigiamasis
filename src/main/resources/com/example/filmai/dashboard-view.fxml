@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filmai.DashboardController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1280.0" minWidth="10.0" prefWidth="1280.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="root">
+            <center>
+                <Pane styleClass="LoginRegisterbutton" BorderPane.alignment="CENTER">
+                    <children>
+                        <TableView fx:id="bookTableView" layoutX="-5.0" layoutY="-4.0" prefHeight="633.0" prefWidth="954.0">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="28.0" text="ID" />
+                                <TableColumn fx:id="nameColumn" prefWidth="307.0" text="Filmo pavadinimas" />
+                                <TableColumn fx:id="summaryColumn" prefWidth="288.0" text="Santrauka" />
+                                <TableColumn fx:id="imdbColumn" minWidth="0.0" prefWidth="104.0" text="IMDB" />
+                                <TableColumn fx:id="categoryCollumn" minWidth="0.0" prefWidth="150.0" text="Kategorija" />
+                                <TableColumn fx:id="user_idCollumn" prefWidth="66.0" text="user id" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </Pane>
+            </center>
+            <left>
+                <Pane prefHeight="629.0" prefWidth="331.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <TextField fx:id="idField" layoutX="43.0" layoutY="50.0" prefHeight="35.0" prefWidth="240.0" promptText="ID">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="nameField" layoutX="43.0" layoutY="100.0" prefHeight="35.0" prefWidth="240.0" promptText="FILMO PAVADINIMAS">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="categoryField" layoutX="43.0" layoutY="310.0" prefHeight="35.0" prefWidth="240.0" promptText="KATEGORIJA">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </TextField>
+                        <Label fx:id="status" alignment="CENTER" layoutX="8.0" layoutY="498.0" prefHeight="19.0" prefWidth="310.0" text="" textFill="#c94e24">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="searchButton" layoutX="43.0" layoutY="384.0" mnemonicParsing="false" onAction="#searchButtonClick" prefHeight="40.0" prefWidth="70.0" text="Ieškoti">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="imdbField" layoutX="43.0" layoutY="260.0" prefHeight="35.0" prefWidth="240.0" promptText="IMDB">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </TextField>
+                        <TextArea fx:id="summaryField" layoutX="43.0" layoutY="150.0" prefHeight="97.0" prefWidth="239.0" promptText="APRAŠYMAS" />
+                        <Button layoutX="119.0" layoutY="385.0" mnemonicParsing="false" onAction="#onBookButtonClick" prefHeight="39.0" prefWidth="82.0" text="Rezervuoti">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="208.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="39.0" prefWidth="75.0" text="Ištrinti">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchButton1" layoutX="42.0" layoutY="433.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="39.0" prefWidth="75.0" text="Redaguoti">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="createButton" layoutX="127.0" layoutY="433.0" mnemonicParsing="false" onAction="#onCreateButtonClick" prefHeight="39.0" prefWidth="75.0" text="Pridėti">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Label fx:id="statusLabel" layoutX="99.0" layoutY="570.0" />
+                    </children>
+                </Pane>
+            </left>
+            <top>
+                <Pane prefHeight="91.0" prefWidth="1008.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label layoutX="570.0" layoutY="15.0" text="FILMAI" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="42.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="976.0" layoutY="46.0" text="PRISIJUNGIMO VARDAS" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="1083.0" layoutY="66.0" text="GRUPĖ" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="logOutButton" layoutX="1168.0" layoutY="7.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="30.0" prefWidth="106.0" text="ATSIJUNGTI">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Label fx:id="groupLabel" alignment="CENTER" layoutX="1132.0" layoutY="65.0" prefHeight="19.0" prefWidth="142.0" textFill="WHITE">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="usernameLabel" alignment="CENTER" layoutX="1132.0" layoutY="45.0" prefHeight="19.0" prefWidth="142.0" textFill="WHITE">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="wishlistLabel" layoutX="38.0" layoutY="38.0" />
+                    </children>
+                </Pane>
+            </top>
+        </BorderPane>
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+        <URL value="@style.css" />
+    </stylesheets>
+</GridPane>

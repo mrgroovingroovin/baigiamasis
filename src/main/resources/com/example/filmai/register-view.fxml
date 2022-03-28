@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filmai.RegisterController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="root" stylesheets="@style.css">
+            <children>
+                <Label layoutX="263.0" layoutY="50.0" scaleX="2.0" scaleY="2.0" text="Registracija">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <Label layoutX="143.0" layoutY="103.0" text="Vartotojo vardas:">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <Label layoutX="143.0" layoutY="133.0" text="Slaptažodis:">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <Label layoutX="143.0" layoutY="190.0" text="El. paštas:">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <Label layoutX="143.0" layoutY="236.0" text="Administratoriaus rolė">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <CheckBox fx:id="isAdminCheckBox" layoutX="286.0" layoutY="238.0" mnemonicParsing="false" />
+                <TextField fx:id="reUsername" layoutX="294.0" layoutY="100.0" />
+                <PasswordField fx:id="rePassword" layoutX="294.0" layoutY="130.0" />
+                <TextField fx:id="reEmail" layoutX="294.0" layoutY="190.0" />
+                <Button fx:id="reRegister" layoutX="246.0" layoutY="290.0" mnemonicParsing="false" onAction="#reOnRegisterButtonClick" prefHeight="44.0" prefWidth="112.0" text="Registruotis">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+                <Label fx:id="reLoginStatus" layoutX="180.0" layoutY="290.0" />
+                <Label layoutX="143.0" layoutY="163.0" text="Pakartoti slaptažodį">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <PasswordField fx:id="reConfirmPassword" layoutX="294.0" layoutY="160.0" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Pane>
+    </children>
+</GridPane>
